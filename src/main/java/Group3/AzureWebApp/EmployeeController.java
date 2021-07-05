@@ -22,14 +22,15 @@ public class EmployeeController {
     return employees;
     }
 
-    /*@GetMapping ("/employee/{id}")
+    @GetMapping ("/employee/{id}")
     Employee employee(@PathVariable int id){
         for (Employee i:employees()){
             if (i.getId()==id){
                 return i;
             }
         }
-    }*/
+        return null;
+    }
 
     /*@GetMapping("/employee/{id}")
     public ResponseEntity<Employee> getProductByID(@PathVariable("id") int id) {
