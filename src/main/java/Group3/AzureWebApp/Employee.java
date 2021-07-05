@@ -21,6 +21,12 @@ public class Employee {
         this.startDate = startDate;
     }
 
+
+
+    public Employee(String firstName, String lastName, String ssn, String department, int salary, String startDate) {
+    }
+
+
     public int getId() {
         return id;
     }

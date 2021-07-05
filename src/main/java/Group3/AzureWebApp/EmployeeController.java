@@ -2,10 +2,8 @@ package Group3.AzureWebApp;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,6 +29,16 @@ public class EmployeeController {
         }
         return null;
     }
+
+
+
+    @PostMapping("/employees")
+    public String post1(Model model, @RequestParam String firstName, @RequestParam String lastName, @RequestParam String SSN, @RequestParam String department, @RequestParam int salary, @RequestParam String startDate) {
+        Employee employee = new Employee(firstName, lastName, SSN, department, salary, startDate);
+        model.addAttribute("employee", employee);
+        return "form";
+    }
+
 
     /*@GetMapping("/employee/{id}")
     public ResponseEntity<Employee> getProductByID(@PathVariable("id") int id) {

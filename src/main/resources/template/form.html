@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<form action="/form" method="post">
+
+<div th:if="${book != null}">
+    <p th:text="'Title: ' + ${book.title}"></p>
+    <p th:text="'Price: ' + ${book.price}"></p>
+    <p th:text="'Author: ' + ${book.author}"></p>
+</div>
+
+    <input type="submit"/>
+</form>
+
+
+</body>
+</html>
