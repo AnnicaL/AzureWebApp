@@ -6,6 +6,7 @@
 </head>
 <body>
 <form action="/employees" method="post" th:object="${employee}">
+    Id: <input type="text" th:field="*{id}">
     First Name: <input type="text" th:field="*{firstName}">
     Last Name: <input type="text" th:field="*{lastName}">
     SSN: <input type="text" th:field="*{SSN}">
