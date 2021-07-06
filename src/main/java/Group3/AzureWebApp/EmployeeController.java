@@ -30,12 +30,16 @@ public class EmployeeController {
         return null;
     }
 
-
+    @GetMapping ("/employees")
+    public String getForm(Model model, @RequestParam int id, @RequestParam String firstName, @RequestParam String lastName, @RequestParam String SSN, @RequestParam String department, @RequestParam int salary, @RequestParam String startDate){
+        Employee employee = new Employee(id, firstName, lastName, SSN, department, salary, startDate);
+        model.addAttribute("employee", employee);
+        return "form";
+    }
 
     @PostMapping("/employees")
-    public String post1(Model model, @RequestParam String firstName, @RequestParam String lastName, @RequestParam String SSN, @RequestParam String department, @RequestParam int salary, @RequestParam String startDate) {
-        Employee employee = new Employee(firstName, lastName, SSN, department, salary, startDate);
-        model.addAttribute("employee", employee);
+    public String post1(Model model, List<Employee> employees, Employee employee) {
+        employees.add(employee);
         return "form";
     }
 

@@ -1,22 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
-
-<form action="/form" method="post">
-
-<div th:if="${book != null}">
-    <p th:text="'Title: ' + ${book.title}"></p>
-    <p th:text="'Price: ' + ${book.price}"></p>
-    <p th:text="'Author: ' + ${book.author}"></p>
-</div>
-
+<form action="/employees" method="post" th:object="${employee}">
+    Id: <input type="text" th:field="*{id}">
+    First Name: <input type="text" th:field="*{firstName}">
+    Last Name: <input type="text" th:field="*{lastName}">
+    SSN: <input type="text" th:field="*{SSN}">
+    Department: <input type="text" th:field="*{department}">
+    Salary: <input type="text" th:field="*{salary}">
+    startDate: <input type="text" th:field="*{startDate}">
     <input type="submit"/>
 </form>
-
-
 </body>
 </html>

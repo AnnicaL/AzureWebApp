@@ -23,7 +23,7 @@ public class Employee {
 
 
 
-    public Employee(String firstName, String lastName, String ssn, String department, int salary, String startDate) {
+    public Employee(int id, String firstName, String lastName, String ssn, String department, int salary, String startDate) {
     }
 
 

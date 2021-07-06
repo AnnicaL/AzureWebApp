@@ -33,11 +33,22 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-thymeleaf</artifactId>
 		</dependency>
-
-
-
 	</dependencies>
-
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>com.azure.spring</groupId>
+				<artifactId>azure-spring-boot-starter-keyvault-secrets</artifactId>
+			</dependency>
+			<dependency>
+				<groupId>com.azure.spring</groupId>
+				<artifactId>azure-spring-boot-bom</artifactId>
+				<version>${azure.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 	<build>
 		<plugins>
 			<plugin>
@@ -46,27 +57,5 @@
 			</plugin>
 		</plugins>
 	</build>
-
-
-
-	<dependencyManagement>
-		<dependencies>
-			<dependency>
-				<groupId>com.azure.spring</groupId>
-				<artifactId>azure-spring-boot-bom</artifactId>
-				<version>${azure.version}</version>
-				<type>pom</type>
-				<scope>import</scope>
-			</dependency>
-
-			<dependency>
-				<groupId>com.azure.spring</groupId>
-				<artifactId>azure-spring-boot-starter-keyvault-secrets</artifactId>
-			</dependency>
-		</dependencies>
-	</dependencyManagement>
-
-
-
 
 </project>
